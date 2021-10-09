@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../partials/Header')%>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <%- include('../../partials/Navigation')%>
+
+  <%- include('../../partials/Sidebar')%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>ຂໍ້ມູນປື້ມທັງໝົດ</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/books">ຂໍ້ມູນປື້ມທັງໝົດ</a></li>
+              <li class="breadcrumb-item active">ຟອມປ້ອນຂໍ້ມູນປື້ມ</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">ຟອມປ້ອນຂໍ້ມູນປື້ມ</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <form action="/books/add" method="POST" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>ຊື່ປື້ມ/Book Name</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter Book Name..." required>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>ຫົວຂໍ້/Book Title</label>
+                  <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title..." required>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>ຜູ້ຂຽນ/Author Name</label>
+                  <input type="text" class="form-control" name="author" id="author" placeholder="Enter Author ..." required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- textarea -->
+                <div class="form-group">
+                  <label>ອະທີບາຍບາງຕ່ອນ/Description</label>
+                  <textarea class="form-control" rows="3" name="desc" id="summernote" placeholder="Enter Description..."></textarea>
+                </div>
+              </div>
+              <div class="col-sm-8">
+                <div class="form-group">
+                  <label>ຮູບພາບປື້ມ/Book Image</label>
+                  <input type="file" class="form-control" name="bookImage" id="fileImage" placeholder="Enter ..." required>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>ຊ່ວງເວລາຂຽນ/Tiomeline</label>
+                  <input type="text" class="form-control" name="timeline" id="timelime" placeholder="Enter Timeline..." required>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card-body -->
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <%- include('../../partials/Footer')%>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<%- include('../../partials/Script')%>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../partials/Header')%>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <%- include('../../partials/Navigation')%>
+
+  <%- include('../../partials/Sidebar')%>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>ຂໍ້ມູນຄຳຄິດເຫັນຕ່າງໆ</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="/admin">ໜ້າຫຼັກ</a></li>
+              <li class="breadcrumb-item active">ຂໍ້ມູນຄຳຄິດເຫັນຕ່າງໆ</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">ຂໍ້ມູຄຳຄິດເຫັນຕ່າງໆ</h3> &nbsp; &nbsp;
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <% if(mails !== 'undefined') { %>
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+             <% mails.forEach(function(mail){%>
+              <tr>
+                <td><%= mail.name %></td>
+                <td><%= mail.email %></td>
+                <td><%= mail.subj %></td>
+                <td><%= mail.message %></td>
+                <td><%= mail.createdAt.toLocaleString() %></td>
+                <td>
+                  <a href="/admin/mail/view/<%= mail._id %>">View</a>
+                  <a href="/admin/mail/delete/<%= mail._id %>">Delete</a>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </tfoot>
+          </table>
+          <% }else{ %>
+            <p>Empty data ...</p>
+          <% } %>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <%- include('../../partials/Footer')%>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<%- include('../../partials/Script')%>
+</body>
+</html>
