@@ -59,3 +59,12 @@ module.exports.get_bookById = async (req, res, next) => {
     next(error)
   }
 }
+
+
+module.exports.get_Policy = async (req, res, next) => {
+  try {
+    res.render('policy');
+  } catch (error) {
+    next(error)
+  }
+}
