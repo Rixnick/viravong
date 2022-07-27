@@ -6,8 +6,10 @@
             "use":"@node/node"
         }
     ],
-    "routes":{
-        "src":"/(.*)",
-        "dest":"Server.js"
-    }
+    "routes":[
+            {
+            "src":"/(.*)",
+            "dest":"Server.js"
+        }
+    ]
 }
